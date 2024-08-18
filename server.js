@@ -34,8 +34,19 @@ app.get("/calculator", function(req,res){
     res.sendFile(__dirname + "/index.html")
 });
 
+app.post("/bmi" , function(req,res){
+    var n1 = parseFloat(req.body.n1)
+    var n2 = parseFloat(req.body.n2)
+
+    var result = (n1 / (n2*n2))
+    res.send("your bmi is " + result)
+});
+app.get("/bmi", function(req,res){
+    res.sendFile(__dirname + "/bmi.html")
+})
 
 
-app.listen(3000 , function(){
+
+app.listen(99 , function(){
     console.log("server..")
 });
